@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
 <title>Cadastro de título</title>
@@ -18,6 +19,10 @@
     </nav>
     
     <form class="form-horizontal" method="POST" action="/titulos">
+    	<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+    		<span th:text="${mensagem}">Título salvo com sucesso!!!</span>
+    	</div>
+    
     	<div class="panel panel-default">
     		<div class="panel-heading">
     			<h1 class="panel-title">Novo título</h1>
@@ -33,7 +38,7 @@
 				<div class="form-group">
 					<label for="dataVencimento" class="col-sm-2 control-label">Data de vencimento</label>
 					<div class="col-sm-2">  
-						<input type="text" class="form-control"	id="dataVencimento" name="dataVencimento" />
+						<input type="text" class="form-control"	id="dataVencimento" name="dataVencimento"/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -53,7 +58,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-success">Salvar</button>
+						<button type="submit" class="btn btn-primary">Salvar</button>
 					</div>
 				</div>
 			</div>
