@@ -35,6 +35,10 @@ public class TituloController {
 		return mv;
 		
 	}
+	@RequestMapping
+	public String pesquisa() {
+		return "PesquisaTitulos";
+	}
 	
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo(){
